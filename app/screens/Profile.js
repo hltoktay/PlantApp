@@ -17,22 +17,30 @@ const LINKS = [
   {
     link: "Share",
     title: "Invite friends",
-    icon: <Icon name="heart" size={28} type="evilicon" color="#000" />
+    icon: (
+      <Icon
+        onPress={() => console.log("hello")}
+        name="people"
+        size={28}
+        type="simplelineicons"
+        color="#000"
+      />
+    )
   },
   {
     link: "Help",
     title: "Help enviroment",
-    icon: <Icon name="eye" size={28} type="evilicon" color="#000" />
+    icon: <Icon name="enviromento" size={28} type="antdesign" color="#000" />
   },
   {
     link: "About",
     title: "About this app",
-    icon: <Icon name="tag" size={28} type="evilicon" color="#000" />
+    icon: <Icon name="infocirlceo" size={28} type="antdesign" color="#000" />
   },
   {
     link: "Settings",
     title: "Your Account Settings",
-    icon: <Icon name="settings" size={28} type="feather" color="#000" />
+    icon: <Icon name="setting" size={28} type="antdesign" color="#000" />
   }
 ];
 

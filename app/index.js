@@ -48,7 +48,7 @@ const AppNavigator = createStackNavigator(
     Profile: ProfileStack
   },
   {
-    initialRouteName: "Profile",
+    initialRouteName: "Main",
     headerMode: "none"
   }
 );

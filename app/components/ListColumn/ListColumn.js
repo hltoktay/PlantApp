@@ -22,7 +22,7 @@ class ListColumn extends PureComponent {
 
   renderContent = () => (
     <TouchableOpacity
-      onPress={this.handlePress}
+      // onPress={this.handlePress}
       style={{
         flexDirection: "row",
         padding: 5,
@@ -39,6 +39,7 @@ class ListColumn extends PureComponent {
   handlePress = () => {
     const { navigate } = this.props.navigation;
     navigate(this.props.link);
+    console.log("hello");
   };
 
   render() {
