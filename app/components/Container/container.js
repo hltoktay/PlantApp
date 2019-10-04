@@ -30,7 +30,7 @@ class Container extends Component {
               onPress={() => navigation.navigate("Login")}
               style={styles.skipButton}
             >
-              <Text style={styles.text}>LOGIN</Text>
+              <Text style={styles.text}>REGISTER</Text>
             </TouchableOpacity>
 
             <TouchableOpacity

@@ -3,7 +3,7 @@ import EStyleSheet from "react-native-extended-stylesheet";
 const styles = EStyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#001d20"
+    backgroundColor: "#fff"
   },
   title: {
     color: "#fff",
@@ -22,6 +22,12 @@ const styles = EStyleSheet.create({
     fontSize: 14,
     paddingTop: 5,
     fontFamily: "Times New Roman"
+  },
+  loading: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center"
   }
 });
 
