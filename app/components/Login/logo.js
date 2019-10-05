@@ -4,15 +4,15 @@ import { View, Image } from "react-native";
 import LogoImage from "./logo.png";
 
 const Logo = () => (
-  <View style={{}}>
+  <View style={{ justifyContent: "center", alignItems: "center" }}>
     <Image
       source={LogoImage}
       resizeMode={"contain"}
       style={{
         width: 300,
-        height: 400,
+        height: 400
 
-        transform: [{ rotate: "90deg" }]
+        //   transform: [{ rotate: "90deg" }]
       }}
     />
   </View>
