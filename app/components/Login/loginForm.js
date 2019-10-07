@@ -8,6 +8,8 @@ import { connect } from "react-redux";
 import { signUp, signIn } from "../../actions/user_action";
 import { bindActionCreators } from "redux";
 
+import { setTokens } from "../../utils/misc";
+
 class LoginForm extends Component {
   state = {
     type: "Login",
@@ -104,13 +106,28 @@ class LoginForm extends Component {
 
     if (isFormValid) {
       if (this.state.type === "Login") {
-        this.props.signIn(formToSubmit);
+        this.props.signIn(formToSubmit).then(() => {
+          this.manageAccess();
+        });
       } else {
-        this.props.signUp(formToSubmit);
+        this.props.signUp(formToSubmit).then(() => {
+          this.manageAccess();
+        });
       }
     } else {
       this.setState({
         hasError: true
+      });
+    }
+  };
+
+  manageAccess = () => {
+    if (!this.props.User.auth.uid) {
+      this.setState({ hasError: true });
+    } else {
+      setTokens(this.props.User.auth, () => {
+        this.setState({ hasError: false });
+        this.props.goNext();
       });
     }
   };
@@ -129,7 +146,7 @@ class LoginForm extends Component {
     return (
       <View>
         <Input
-          placeholder="Enter email"
+          placeholder="Email"
           placeholderTextColor="#000"
           type={this.state.form.email.type}
           value={this.state.form.email.value}
@@ -140,7 +157,7 @@ class LoginForm extends Component {
         />
 
         <Input
-          placeholder="Enter your password"
+          placeholder="Password"
           placeholderTextColor="#000"
           type={this.state.form.password.type}
           value={this.state.form.password.value}
